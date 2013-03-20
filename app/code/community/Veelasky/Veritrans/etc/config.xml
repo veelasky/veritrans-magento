@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<modules>
+		<Veelasky_Veritrans>
+			<version>0.1.0</version>
+		</Veelasky_Veritrans>
+	</modules>
+	
+	<global>
+		<blocks>
+			<veritrans>
+				<class>Veelasky_Veritrans_Block</class>
+			</veritrans>
+		</blocks>
+		<models>
+			<veritrans>
+				<class>Veelasky_Veritrans_Model</class>
+				<resourceModel>veritrans_mysql4</resourceModel>
+			</veritrans>
+			<veritrans_mysql4>
+				<class>Veelasky_Veritrans_Model_Mysql4</class>
+				<entities>
+					<veritrans>
+						<table>veritrans</table>
+					</veritrans>
+				</entities>
+			</veritrans_mysql4>
+		</models>
+		<helpers>
+			<veritrans>
+				<class>Veelasky_Veritrans_Helper</class>
+			</veritrans>
+		</helpers>
+		<resources>
+			<veritrans_setup>
+				<setup>
+					<module>Veelasky_Veritrans</module>
+				</setup>
+				<connection>
+					<use>core_setup</use>
+				</connection>
+			</veritrans_setup>
+			<veritrans_write>
+				<connection>
+					<use>core_write</use>
+				</connection>
+			</veritrans_write>
+			<veritrans_read>
+				<connection>
+					<use>core_read</use>
+				</connection>
+			</veritrans_read>
+		</resources>
+	</global>
+	
+	<frontend>
+		<routers>
+			<veritrans>
+				<use>standard</use>
+				<args>
+					<module>Veelasky_Veritrans</module>
+					<frontName>veritrans</frontName>
+				</args>
+			</veritrans>
+		</routers>
+		<layout>
+			<updates>
+				<veritrans>
+					<file>veritrans.xml</file>
+				</veritrans>
+			</updates>
+		</layout>
+	</frontend>
+	
+	<default>
+		<payment>
+			<veritrans>
+				<active>0</active>
+				<model>veritrans/payment</model>
+				<order_status>processing</order_status>
+				<title>Veritrans Indonesia</title>
+				
+				<cctypes>VI,MC</cctypes>
+				<payment_action>authorize</payment_action>
+				<allowspecific>0</allowspecific>
+			</veritrans>
+		</payment>
+	</default>
+</config>

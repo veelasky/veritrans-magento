@@ -1,0 +1,20 @@
+<div class='std'>
+	<h2>Veritrans</h2>
+	<div class='a-center' style='padding: 10px 0;'>
+		<img src="<?php echo $this->getSkinUrl('veritrans/logo-big.png');?>" />
+		
+		<h4 style='margin: 30px 0;'>Thank You! You will be redirected to veritrans in a few seconds</h4>
+		
+		<form id='veritransForm' name='veritrans' action='<?php echo $this->getVeritransGatewayUrl();?>' method='post'>
+			<input type='hidden' name='MERCHANT_ID' value='<?php echo $this->getMerchantId();?>' />
+			<input type='hidden' name='ORDER_ID' value='<?php echo $this->getOrderId();?>' />
+			<input type='hidden' name='TOKEN_BROWSER' value='<?php echo $this->getTokenBrowser();?>' />
+		</form>
+		<script type='text/javascript'>
+			var timeout = setTimeout(function() {
+				document.forms['veritrans'].submit();
+			}, 3000);
+		</script>
+	</div>
+</div>
+<?php //$this->clearVeritransToken();?>

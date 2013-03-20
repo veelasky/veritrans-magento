@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="0.1.0">
+	<veritrans_payment_process>
+		<reference name="root">
+			<action method="setTemplate">
+               <template>page/1column.phtml</template>
+           </action>
+		</reference>
+		<reference name="content">
+			<block type="veritrans/redirect" name="veritrans.redirect" template="veritrans/redirect.phtml"></block>
+		</reference>
+	</veritrans_payment_process>
+	
+	<veritrans_payment_success>
+		<reference name="root">
+			<action method="setTemplate">
+               <template>page/1column.phtml</template>
+           </action>
+		</reference>
+		<reference name="content">
+			<block type="veritrans/response" name="veritrans.success" template="veritrans/success.phtml"></block>
+		</reference>
+	</veritrans_payment_success>
+	
+	<veritrans_payment_cancel>
+		<reference name="root">
+			<action method="setTemplate">
+               <template>page/1column.phtml</template>
+           </action>
+		</reference>
+		<reference name="content">
+			<block type="veritrans/response" name="veritrans.cancel" template="veritrans/cancel.phtml"></block>
+		</reference>
+	</veritrans_payment_cancel>
+	
+	<veritrans_payment_error>
+		<reference name="root">
+			<action method="setTemplate">
+               <template>page/1column.phtml</template>
+           </action>
+		</reference>
+		<reference name="content">
+			<block type="veritrans/response" name="veritrans.error" template="veritrans/error.phtml"></block>
+		</reference>
+	</veritrans_payment_error>
+	
+	<veritrans_payment_unauthorized>
+		<reference name="root">
+			<action method="setTemplate">
+               <template>page/1column.phtml</template>
+           </action>
+		</reference>
+		<reference name="content">
+			<block type="veritrans/response" name="veritrans.unathorized" template="veritrans/unauthorized.phtml"></block>
+		</reference>
+	</veritrans_payment_unauthorized>
+</layout>
